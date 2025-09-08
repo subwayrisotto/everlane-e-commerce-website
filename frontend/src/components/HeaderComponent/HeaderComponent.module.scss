@@ -1,0 +1,151 @@
+$color-black: #000;
+$color-white: #fff;
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+
+    .earlyAccessCtn {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        width: 100%;
+        background-color: $color-black;
+        color: $color-white;
+        padding: 8px 30px;
+    }
+
+    .eaTextCtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        text-align: center;
+        flex: 1; 
+        gap: 4px;
+        font-size: 12px;
+        line-height: 16px;
+
+        .eaLinkCtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            a{
+                color: $color-white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .currencyCtn {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .text{
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+    .flag img {
+        width: 21px;
+        height: auto;
+    }
+
+    .navigation{
+        width: 100%;
+        background-color: $color-white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 68px;
+
+        .leftNavigation, .rightNavigation, .logoCtn{
+            width: 33.3%;
+        }
+
+        .leftNavigation .navigationList {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            gap: 24px;
+          
+            .navigationListItem {
+              padding: 20px 0;
+              position: relative; // needed for pseudo-element
+              cursor: pointer;
+          
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    width: 0; // start hidden
+                    background-color: $color-black;
+                    transition: width 0.3s ease; // animate width
+                }
+            
+                &:hover::after {
+                    width: 100%; // grow on hover
+                }
+            
+                &.activeLink::after {
+                    width: 100%; // stay full width if active
+                }
+            
+                a {
+                    text-decoration: none;
+                    color: $color-black;
+                    font-size: 14px;
+                    line-height: 16px;
+                    display: inline-block;
+                }
+                }
+          }
+
+        .rightNavigation .navigationList{
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            align-items: center;
+            .navigationListItem{
+                padding: 12px;
+                img{
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+
+        .logoCtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .productsCategories{
+        width: 100%;
+        border-top: 1px solid #dddbdc;
+        border-bottom: 1px solid #dddbdc;
+        padding: 20px 0;
+
+        .productsCategoriesList{
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            line-height: 16px;
+
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}

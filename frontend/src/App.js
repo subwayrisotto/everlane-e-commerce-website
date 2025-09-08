@@ -1,22 +1,21 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/HeaderComponent/HeaderComponent';
+import HomePage from './pages/HomePage';
+import './App.css';
+import './styles/fonts.scss'
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('/api/products')
-      .then(res => res.json())
-      .then(setProducts)
-      .catch(console.error);
-  }, []);
-
   return (
-    <div>
-      {products.map(p => (
-        <div key={p.id}>
-          {p.name} - ${p.price}
-        </div>
-      ))}
+    <div className='wrapper'>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          {/* <Route path="/products" element={<ProductsPage currency={currency} />} /> */}
+        </Routes>
+      </Router>
     </div>
   );
 }
