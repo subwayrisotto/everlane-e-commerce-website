@@ -1,0 +1,62 @@
+.storesContainer{
+    width: 100%;
+    padding: 30px 35px;
+
+    .headerContent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+
+        .header{
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        .subHeader{
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .storesList {
+        margin-top: 64px;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 64px 30px;
+        place-items: center;
+
+        .storesListItem{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 8px;
+            transition: .3s ease;
+            cursor: pointer;
+
+            .textCtn{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .city{
+                text-transform: uppercase;
+                font-size: 10px;
+                line-height: 16px;
+            }
+
+            .storeName{
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+      }
+}

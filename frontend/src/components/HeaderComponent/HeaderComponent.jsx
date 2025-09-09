@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { aboutCategories } from '../../data/aboutCategories';
 import { navigation } from '../../data/navigation';
 import { productsCategories } from '../../data/productsCategories';
@@ -7,7 +7,14 @@ import { userNavigation } from '../../data/userNavigation';
 import styles from './HeaderComponent.module.scss';
 
 function Header() {
-    const [activeLink, setActiveLink] = useState(navigation[1].link);
+    const location = useLocation();
+    const currentPath = location.pathname + location.search;
+    const [activeLink, setActiveLink] = useState(currentPath);
+
+    useEffect(() => {
+        setActiveLink(currentPath);
+    }, [currentPath]);
+
   return (
     <header className={styles.header}>
       <div className={styles.earlyAccessCtn}>

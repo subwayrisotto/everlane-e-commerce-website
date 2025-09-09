@@ -18,6 +18,11 @@ function StoresPage() {
 
   return (
     <div className={styles.storesContainer}>
+        <div className={styles.headerContent}>
+            <p className={styles.header}>Stores</p>
+            <p className={styles.subHeader}>Find one of our {stores.length} stores nearest you.</p>
+        </div>
+
         <ul className={styles.storesList}>
             {
                 stores.length > 0 ? (
@@ -25,8 +30,10 @@ function StoresPage() {
                         return(
                             <li className={styles.storesListItem} key={index}>
                                 <img src={`/stores/${store.image}`} alt={store.name} />
-                                <p className={styles.city}>{store.city}</p>
-                                <p className={styles.storeName}>{store.name}</p>
+                                <div className={styles.textCtn}>
+                                    <p className={styles.city}>{store.city}</p>
+                                    <p className={styles.storeName}>{store.name}</p>
+                                </div>
                             </li>
                         )
                     })
