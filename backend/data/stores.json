@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "University Village",
+        "city": "Seattle",
+        "image": "Seattle.png"
+    },
+    {
+        "id": 2,
+        "name": "Valencia Street, San Francisco",
+        "city": "San Francisco",
+        "image": "San-Francisco.png"
+    },
+    {
+        "id": 3,
+        "name": "Stanford",
+        "city": "Palo Alto",
+        "image": "Palo-Alto.png"
+    },
+    {
+        "id": 4,
+        "name": "Abbot Kinney",
+        "city": "Los Angeles",
+        "image": "Los-Angeles.png"
+    },
+    {
+        "id": 5,
+        "name": "Seaport",
+        "city": "Boston",
+        "image": "Boston.png"
+    },
+    {
+        "id": 6,
+        "name": "Prince Street, New York",
+        "city": "New York",
+        "image": "New-York.png"
+    },
+    {
+        "id": 7,
+        "name": "Williamsburg",
+        "city": "Brooklyn",
+        "image": "Brooklyn.png"
+    },
+    {
+        "id": 8,
+        "name": "King of Prussia",
+        "city": "King of Prussia",
+        "image": "King-of-Prussia.png"
+    },
+    {
+        "id": 9,
+        "name": "Georgetown",
+        "city": "Georgetown",
+        "image": "Georgetown.png"
+    }
+]

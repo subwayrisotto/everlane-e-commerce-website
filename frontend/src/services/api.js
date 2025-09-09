@@ -10,3 +10,14 @@ export async function getProducts() {
     return [];
   }
 }
+
+export async function getStores() {
+  try {
+    const res = await fetch(`${API_BASE}/stores`);
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    return await res.json();
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return [];
+  }
+}

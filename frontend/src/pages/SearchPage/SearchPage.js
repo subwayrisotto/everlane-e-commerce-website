@@ -21,6 +21,7 @@ function SearchPage() {
       </div>
 
       <div className={styles.popularCategoryCtn}>
+        <p className={styles.header}>Popular Categories</p>
         <ul className={styles.popularCategoryList}>
           {
             popularCategories.length > 0 ? (

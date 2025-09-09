@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { aboutCategories } from '../../data/aboutCategories';
 import { navigation } from '../../data/navigation';
 import { productsCategories } from '../../data/productsCategories';
 import { userNavigation } from '../../data/userNavigation';
@@ -7,7 +8,6 @@ import styles from './HeaderComponent.module.scss';
 
 function Header() {
     const [activeLink, setActiveLink] = useState(navigation[1].link);
-
   return (
     <header className={styles.header}>
       <div className={styles.earlyAccessCtn}>
@@ -68,13 +68,23 @@ function Header() {
       <div className={styles.productsCategories}>
         <ul className={styles.productsCategoriesList}>
             {
-                productsCategories.map((category, index) => {
-                    return (
-                        <li className={styles.productsCategoriesListItem} key={index}>
-                            <Link to={`/products/?category=${category.link}`} style={{color: category.text === "Sale" ? 'red' : 'black'}}>{category.text}</Link>
-                        </li>
-                    )
-                })
+                activeLink === "/about-us" ? (
+                    aboutCategories.map((category, index) => {
+                        return (
+                            <li className={styles.productsCategoriesListItem} key={index}>
+                                <Link to={`/about-us/${category.link}`}>{category.text}</Link>
+                            </li>
+                        )
+                    })
+                ) : (
+                    productsCategories.map((category, index) => {
+                        return (
+                            <li className={styles.productsCategoriesListItem} key={index}>
+                                <Link to={`/products/?category=${category.link}`} style={{color: category.text === "Sale" ? 'red' : 'black'}}>{category.text}</Link>
+                            </li>
+                        )
+                    })
+                )
             }
         </ul>
       </div>
